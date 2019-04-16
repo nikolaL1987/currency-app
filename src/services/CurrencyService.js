@@ -57,7 +57,6 @@ export default {
   getAllIsoCodes() {
     let currencies = this.getCurrencies();
 
-    // Check if value already exists
     let isoCodes = [];
     Object.values(currencies).forEach(item => {
       isoCodes.push(item.ISO);
