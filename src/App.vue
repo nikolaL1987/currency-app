@@ -38,11 +38,19 @@ body {
   color: #2c3e50;
   height: 100%;
 }
+#wrapper {
+  @media (max-width: 767px) {
+    display: block !important;
+  }
+}
 #page-content-wrapper {
-  min-width: 100vw;
+  width: 100%;
 }
 .page-content-inner {
   padding: 30px;
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
 }
 @media (min-width: 768px) {
   #page-content-wrapper {

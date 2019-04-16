@@ -24,6 +24,9 @@
   display: -webkit-flex;
   display: flex;
   align-items: center;
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
   &-title {
     margin: 0;
     font-size: 10px;

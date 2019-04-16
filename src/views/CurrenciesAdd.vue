@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-6 p-0">
+  <div class="col-lg-6 col-md-9 col-sm-12 p-0">
     <h4 class="form-title">Add Currency</h4>
     <CurrenciesForm />
   </div>
