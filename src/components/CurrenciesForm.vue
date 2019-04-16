@@ -2,7 +2,7 @@
   <form class="currencies-form" @submit.prevent="onSubmitCreate">
     <div class="form-group">
       <label for="currency_code" class="col-form-label">Currency Code</label>
-      <div class="col-sm-8 pr-0">
+      <div class="col-sm-8 col-xs-9 pr-0">
         <input
           name="currency_code"
           v-validate="'required|currency_code|max:3'"
@@ -22,7 +22,7 @@
       <label for="currency_symbol" class="col-form-label"
         >Currency Symbol</label
       >
-      <div class="col-sm-8 pr-0">
+      <div class="col-sm-8 col-xs-9 pr-0">
         <input
           name="currency_symbol"
           v-validate="'required'"

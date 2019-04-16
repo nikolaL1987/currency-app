@@ -104,9 +104,13 @@ export default {
 <style lang="scss">
 .sidebar {
   &-wrapper {
-    min-height: 100vh;
     background-color: #eee;
-    width: 33%;
+    @media (min-width: 992px) {
+      width: 33%;
+    }
+    @media (min-width: 767px) {
+      min-height: 100vh;
+    }
   }
   &-header {
     display: -webkit-box;
@@ -117,12 +121,18 @@ export default {
     padding: 15px 30px;
     box-sizing: border-box;
     background-color: #e35b00;
+    @media (max-width: 767px) {
+      padding: 15px;
+    }
     .search {
-      flex: 0 0 60%;
+      width: 100%;
     }
   }
   &-content {
     padding: 30px;
+    @media (max-width: 767px) {
+      padding: 15px;
+    }
   }
   &-heading {
     margin: 0;
