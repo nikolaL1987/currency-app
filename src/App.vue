@@ -44,17 +44,6 @@ body {
 .page-content-inner {
   padding: 30px;
 }
-
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 @media (min-width: 768px) {
   #page-content-wrapper {
     min-width: 0;
