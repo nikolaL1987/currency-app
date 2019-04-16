@@ -1,44 +1,43 @@
 <template>
   <form class="currencies-form" @submit.prevent="onSubmitCreate">
     <div class="form-group">
-      <label for="currencyUnique" class="col-form-label">Currency Code</label>
+      <label for="currency_code" class="col-form-label">Currency Code</label>
       <div class="col-sm-8 pr-0">
         <input
-          name="currencyUnique"
-          v-validate="'required|currencyUnique|max:3'"
+          name="currency_code"
+          v-validate="'required|currency_code|max:3'"
           data-vv-as="Currency Code"
           class="form-control"
-          :class="{ input: true, 'is-danger': errors.has('currencyUnique') }"
+          :class="{ input: true, 'is-danger': errors.has('currency_code') }"
           type="text"
-          id="currencyUnique"
+          id="currency_code"
           v-model="ISO"
         />
-        <span v-show="errors.has('currencyUnique')" class="help is-danger">{{
-          errors.first("currencyUnique")
+        <span v-show="errors.has('currency_code')" class="help is-danger">{{
+          errors.first("currency_code")
         }}</span>
       </div>
     </div>
     <div class="form-group">
-      <label for="currency-symbol" class="col-form-label"
+      <label for="currency_symbol" class="col-form-label"
         >Currency Symbol</label
       >
       <div class="col-sm-8 pr-0">
         <input
-          name="currency-symbol"
+          name="currency_symbol"
           v-validate="'required'"
           data-vv-as="Currency Symbol"
           class="form-control"
-          :class="{ input: true, 'is-danger': errors.has('currency-symbol') }"
+          :class="{ input: true, 'is-danger': errors.has('currency_symbol') }"
           type="text"
-          id="currency-symbol"
+          id="currency_symbol"
           v-model="symbol"
         />
-        <span v-show="errors.has('currency-symbol')" class="help is-danger">{{
-          errors.first("currency-symbol")
+        <span v-show="errors.has('currency_symbol')" class="help is-danger">{{
+          errors.first("currency_symbol")
         }}</span>
       </div>
     </div>
-
     <div class="text-right">
       <button type="submit" class="btn btn-primary">SUBMIT</button>
     </div>
@@ -57,8 +56,8 @@ export default {
     };
   },
   created() {
-    this.$validator.extend("currencyUnique", {
-      getMessage: field => `The ${field} value is not unique.`,
+    this.$validator.extend("currency_code", {
+      getMessage: `Already exists`,
       validate: value => {
         return new Promise(resolve => {
           const isoCodes = CurrencyService.getAllIsoCodes();
